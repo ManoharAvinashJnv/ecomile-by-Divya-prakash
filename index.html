@@ -26,6 +26,87 @@
             line-height: 1.6;
         }
 
+        /* Top Header Banner Style */
+        .top-banner {
+            background-color: #1b5e20;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Custom Styled Popup Notification --- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .popup-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            border: 3px solid var(--primary-color);
+            transform: scale(0.9);
+            animation: popUp 0.3s ease-out forwards;
+        }
+
+        .popup-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .popup-text {
+            color: #1b5e20;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .popup-btn {
+            background: linear-gradient(135deg, #66BB6A, #388E3C);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .popup-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #388E3C, #1b5e20);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes popUp {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -99,7 +180,7 @@
             font-size: 0.9rem;
             opacity: 0.8;
             margin-top: 20px;
-            width: 100%; /* Ensures it takes full width in the flex container */
+            width: 100%;
         }
 
         /* Benefits Section */
@@ -138,7 +219,6 @@
         @media (max-width: 576px) {
              .benefits-grid { grid-template-columns: 1fr; }
         }
-
 
         /* Footer */
         footer {
@@ -193,8 +273,8 @@
         .feature-card .inner {
             position: relative;
             z-index: 1;
-            background: #e8f5e9; /* Light green background */
-            color: #333; /* Black text */
+            background: #e8f5e9;
+            color: #333;
             border-radius: 13px;
             padding: 25px;
             width: 100%;
@@ -251,6 +331,22 @@
     </style>
 </head>
 <body>
+    <!-- Styled Notification Modal Overlay -->
+    <div class="popup-overlay" id="popupModal">
+        <div class="popup-card">
+            <div class="popup-icon">🌱</div>
+            <div class="popup-text">
+                This site is made by Divya Prakash Class 9th students From Jnv Sitamarhi . For Demo model to green energy
+            </div>
+            <button class="popup-btn" onclick="closePopup()">Continue to Site</button>
+        </div>
+    </div>
+
+    <!-- Top Header Banner -->
+    <div class="top-banner">
+        Made by Divya prakash (jnv Sitamarhi)
+    </div>
+
     <header>
         <nav class="navbar">
             <div class="nav-container">
@@ -346,6 +442,10 @@
     </footer>
 
     <script>
+        function closePopup() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -364,4 +464,3 @@
     </script>
 </body>
 </html>
-
