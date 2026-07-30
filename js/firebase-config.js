@@ -1,12 +1,12 @@
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDFJQKYkWywoSprZqOtjqjoYAe7nkGOfEI",
-  authDomain: "ecomiles-70c6e.firebaseapp.com",
-  projectId: "ecomiles-70c6e",
-  storageBucket: "ecomiles-70c6e.firebasestorage.app",
-  messagingSenderId: "247523942180",
-  appId: "1:247523942180:web:947f664f5de7f0c1759db1",
-  measurementId: "G-2TP0NK67TX"
+  apiKey: "AIzaSyAGk4GqJh4GCBUlV2lTMPqgzbKce2KDThY",
+  authDomain: "ecomile-e4c89.firebaseapp.com",
+  projectId: "ecomile-e4c89",
+  storageBucket: "ecomile-e4c89.firebasestorage.app",
+  messagingSenderId: "221186748593",
+  appId: "1:221186748593:web:81c1c6ca58b7ceb4373290",
+  measurementId: "G-DCHH36NDJ6"
 };
 
 // Wait for Firebase to load, then initialize
